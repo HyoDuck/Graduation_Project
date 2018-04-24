@@ -1,3 +1,7 @@
+###############################################################################
+# http://finance.naver.com/ 에서 주식종목 데이터를 받아 Excel 파일로 생성합니다.    
+# Excel file은 C:\data\StockInfo 에 kosdaq, kospi folder로 저장됩니다.          
+###############################################################################
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
