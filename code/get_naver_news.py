@@ -2,7 +2,7 @@
 # date : 2018.05.14
 # http://finance.naver.com/item/news.nhn?code= 에서 뉴스, 공시 정보를 가져옵니다
 # 가져온 기사들을 txt 파일로 저장하는 path는 "C:\\data\\StockInfo\\news\\naver" 입니다.
-
+#
 # 자연어 처리코드, 빈도수 체크하는 코드 추가예정
 
 from bs4 import BeautifulSoup
