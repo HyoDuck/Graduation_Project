@@ -10,7 +10,7 @@ import os
 from pyexcelerate import Workbook
 import time
 import sys
-
+#
 # html 주소를 받아 페이지를 여는 함수
 # 인터넷 연결이 불안정하여 중간에 끊길수도 있으니 except로 재호출하고 Error_Count를 +1한다.
 # Error_Count가 100보다 커지면 프로그램을 강제로 종료한다.
