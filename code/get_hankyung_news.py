@@ -4,7 +4,7 @@
 #한국경제 홈페이지에서 검색어로 나오는 기사들을 크롤링합니다.
 #2가지 function이 있는데 첫 번째는 일반 검색으로 뉴스의 text들을 가져오는 것,
 #두 번째로는 태그를 활용한 검색입니다. 예를 들어 삼성전자에 관한 태그검색을 실행하면 #삼성전자로 태그붙인 기사들을 모두 가져옵니다.
-
+#
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import os
