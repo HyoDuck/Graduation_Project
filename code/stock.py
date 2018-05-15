@@ -1,6 +1,6 @@
 # 마지막 수정일 : 2018/05/11
 # 키움증권 api를 이용해 사용자가 원하는 종목코드의 분봉데이터를 가져옵니다.
-
+#
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QAxContainer import *
