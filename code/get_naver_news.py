@@ -71,6 +71,9 @@ def Get_newsPage_naver(keyword = None, start_date = "2018.01.01 12:00", end_date
         finance_address = "http://finance.naver.com/item/news_news.nhn?code=" + keyword + "&page=" + str(page_num) + "&sm=title_entity_id.basic&clusterId="
         finance_page = Get_html(finance_address)
 
+# http 주소들을 리스트 형태로 전달받으면 "C:\\data\\StockInfo\\news\\naver" 위치에 .txt 파일을 만들어 text 정보들을 저장합니다.
+# source_list = 주소 리스트, txt_file = "C:\\data\\StockInfo\\news\\naver" 위치에 생성되는 .txt 파일 정보
+# 이전에 생성되었던 파일과 같은 txt파일이름을 전달할시에는 이전에 있던 txt파일의 text들이 모두 삭제됩니다.
 def Get_text_naver(source_list = None, txt_file = "txt_file.txt"):
     txt_path = "C:\\data\\StockInfo\\news\\naver\\" + txt_file
     file_cont = open(txt_path, mode='w', encoding='utf-8')
@@ -90,6 +93,7 @@ def Get_text_naver(source_list = None, txt_file = "txt_file.txt"):
 
     file_cont.close()
 
+# "C:\\data\\StockInfo\\news\\naver" 디렉토리가 모두 있는지 체크하고 없다면 생성합니다.
 def Check_dir():
     if not os.path.isdir("C:\\data"):
         os.mkdir("C:\\data")
