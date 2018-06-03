@@ -12,7 +12,7 @@ import matplotlib as mlt
 # list[n][3]은 기준종목의 종가 리스트
 # list[n][4]은 비교종목의 종가 리스트
 
-# 그래프 2개씩 묶음으로 그려냅니다.
+# 그래프 n개 묶음으로 그려냅니다.
 def graph_testing(source_list):
     mdf_list = []       #mdf_list[n][0]은 종목번호, mdf_list[n][1]은 변경된 종가 리스트입니다.
     stock_num_list = []
