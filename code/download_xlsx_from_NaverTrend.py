@@ -1,3 +1,18 @@
+# writer : 김효빈
+# upload date : 2018-08-19
+# https://datalab.naver.com/ 에서 검색어 트래픽을 확인하고 xlsx 파일을 다운받습니다.
+#
+# download_xlsx(search_words, start_date = "2016-01-01",
+#                  end_date = str(datetime.today().year) + '-' + str(datetime.today().month) + '-' + str(datetime.today().day),
+#                  download_path = 'C:\data\download_from_NaverTrend', chrome_path = 'c:\\data\\chromedriver.exe')
+# 전달인자
+# search_words 검색하고자 하는 리스트
+# start_date, end_date 시작일과 마감일 // 디폴트값은 2016-01-01 부터 ~ 현재까지 입니다.
+# download_path 다운로드 경로 // 기본경로는 C:\data\download_from_NaverTrend 입니다.
+# download_path 에 전달한 경로가 존재하지 않는다면 하위 디렉토리부터 하나씩 생성합니다.
+# chrome_path 크롬드라이버가 위치한 경로입니다. // 기본경로는 c:\\data\\chromedriver.exe입니다.
+
+
 import os
 import time
 from selenium import webdriver   # 웹 애플리케이션의 테스트를 자동화하기 위한 프레임 워크
@@ -139,7 +154,3 @@ def download_xlsx(search_words, start_date = "2016-01-01",
 
 
 
-
-
-if __name__ == '__main__':
-    download_xlsx(search_words=['효덕', '테스트', '그래가꼬'])
