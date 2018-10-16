@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import *
-import download_stockinfo
+from tkinter import *
+import tkinter.filedialog
 
 class MyWindow(QWidget):
     def __init__(self):
@@ -48,7 +49,7 @@ class MyWindow(QWidget):
         label9 = QLabel("일")
 
         checkBox1 = QCheckBox("ETF, ETN")  #ETF, ETN 체크박스입니다. QCheckBox위젯을 사용했습니다.
-        pushButton1 = QPushButton("종가")  #
+        pushButton1 = QPushButton("종가")
         pushButton2 = QPushButton("코사인 유사도 분석")
         pushButton3 = QPushButton("군집 분석")
 
@@ -56,13 +57,15 @@ class MyWindow(QWidget):
         pushButton5 = QPushButton("주식 분봉 데이터")
         pushButton6 = QPushButton("파일경로 설정")
         pushButton6.clicked.connect(self.pushButtonClicked)  #클릭시 연결할 함수명을 괄호안에 입력합니다.
-        label10 = QLabel()
+        self.label10 = QLabel()
+
         #레이아웃을 설정합니다.
         firstLayOut = QVBoxLayout()
         firstLayOut.addWidget(label1)
         firstLayOut.addWidget(radio1)
         firstLayOut.addWidget(radio2)
         firstLayOut.addWidget(radio3)
+
         #숫자는 레이아웃의 좌표입니다.
         secondLayOut = QGridLayout()
         secondLayOut.addWidget(label2, 1, 0)
@@ -90,7 +93,7 @@ class MyWindow(QWidget):
         FourthLayOut.addWidget(pushButton4)
         FourthLayOut.addWidget(pushButton5)
         FourthLayOut.addWidget(pushButton6)
-        FourthLayOut.addWidget(label10)
+        FourthLayOut.addWidget(self.label10)
 
         layout = QVBoxLayout()
         layout.addLayout(firstLayOut)
@@ -101,8 +104,11 @@ class MyWindow(QWidget):
         self.setLayout(layout)
 
     def pushButtonClicked(self):
-        fname = QFileDialog.getOpenFileName(self)
-        self.label.setText(fname[0])
+        root = Tk().withdraw()
+        title = 'Save project as'
+        ftypes = [('csv file', '.csv'), ('All files', '*')]
+        filename = tkinter.filedialog.asksaveasfilename(filetypes=ftypes, title=title, initialfile='noname.csv')
+        self.label10.setText(filename[0])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
