@@ -103,12 +103,13 @@ class MyWindow(QWidget):
 
         self.setLayout(layout)
 
+    #파일 경로를 지정해 주는 함수입니다.
     def pushButtonClicked(self):
         root = Tk().withdraw()
         title = 'Save project as'
         ftypes = [('csv file', '.csv'), ('All files', '*')]
         filename = tkinter.filedialog.asksaveasfilename(filetypes=ftypes, title=title, initialfile='noname.csv')
-        self.label10.setText(filename[0])
+        self.label10.setText(filename)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
